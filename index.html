@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pomodoro</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <style>body,html{margin:0;padding:0;width:100vw;height:100vh;background:#f7f3e9;font-size:32px;font-family:Roboto,sans-serif;transition:background .2s ease}.wrapper{width:90vw;height:12rem;max-width:20rem;position:absolute;left:50vw;top:50vh;transform:translate(-50%,-50%);display:grid;grid-template-columns:1fr 3rem}.content{color:#fff;position:relative}.task{background:#a3d2ca;width:100%;height:100%;transition:transform .2s ease,opacity .2s ease,background .2s ease;display:grid;position:absolute}.task textarea{border:none;background:0 0;color:#fff;font-size:1rem;resize:none;margin:1rem}.task textarea:focus{outline:0}.content.timerVisable .task{transition:transform 7s ease;transform:translateX(-9rem)}.timer{position:absolute;background:#5eaaa8;width:100%;height:100%;transition:background .2s ease}.timer span{position:absolute;right:1rem;top:30%;padding:.5rem 1rem;font-family:Orbitron,sans-serif;color:#000;background:grey;transition:background .2s ease}.toolbar{border:none;background:#5eaaa8;display:flex;flex-direction:column;text-align:center;transition:background .2s ease}.toolbar a span{margin:1rem;font-size:1rem;color:#fff;transition:color 250ms ease}.toolbar a span:active{transition:color .1s ease;color:#f05945}.btnToggle span:first-child{display:none}.btnToggle.toggled span:first-child{display:inline-block}.btnToggle.toggled span:last-child{display:none}body.break{background:#f8ede3}body.break .wrapper .content .task{opacity:0;background:#bdd2b6}body.break .wrapper .content .task textarea{pointer-events:none}body.break .wrapper .content .timer{background:#798777}body.break .wrapper .content .timer span{background:#a2b29f}body.break .wrapper .toolbar{background:#798777}.info{font-size:.3rem}</style>
+
+</head>
+<body>
+   <div class="wrapper">
+       <div id="content" class="content">
+           <div class="timer"><span>12:14</span></div>
+           <div class="task"><textarea wrap="hard" autofocus placeholder="Type your task here." ></textarea></div>
+       </div>
+       <div class="toolbar">
+           <a class="btnToggle" id="timerBtn" href="#" title="Hold to show timer">
+            <span class="material-icons">
+            snooze
+            </span>
+            <span class="material-icons">
+                timer
+                </span>    
+            </a>
+            <a id="startStopBtn" href="#" class="btnToggle">
+                <span title="stop timer" class="material-icons">
+                    stop
+                </span>
+                <span title="start timer" class="material-icons">
+                    play_arrow
+                </span>
+            </a>
+       </div>
+   </div> 
+
+
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+
+   <button id="toggleBreakBtn">toggle break</button><span class="info">*notificationsound vorstellen*</span>
+    <script>var timerBtn = document.getElementById("timerBtn");
+var contentElement = document.getElementById("content");
+var startStopBtn = document.getElementById("startStopBtn");
+var toggleBreakBtn = document.getElementById("toggleBreakBtn");
+console.log("Das ist alles irgendwie zusammengeschustert, weil ich das im Browser designed habe.😅 Ich müsste alles nochmal von vorne machen, wenn die Idee gut ist. Btw. denke ich, ist für diese Methode sowieso Bleistift und Eieruhr besser xD");
+timerBtn.addEventListener("mousedown", function () {
+    contentElement.classList.add("timerVisable");
+});
+document.addEventListener("mouseup", function () {
+    contentElement.classList.remove("timerVisable");
+});
+startStopBtn.addEventListener("click", function () {
+    startStopBtn.classList.toggle("toggled");
+});
+var toggleBreak = function () {
+    document.body.classList.toggle("break");
+    timerBtn.classList.toggle("toggled");
+};
+toggleBreakBtn.addEventListener("click", toggleBreak);
+</script>
+</body>
+</html>
